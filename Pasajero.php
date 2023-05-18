@@ -26,15 +26,18 @@ class Pasajero{
     private $apellido;
     private $nroDocumento;
     private $telefono;
+    private $numAsiento;
+    private $numTicket;
 
 
     //METODOS
-    public function __construct($nombre, $apellido, $nroDocumento, $telefono){
+    public function __construct($nombre, $apellido, $nroDocumento, $telefono, $numAsiento, $numTicket){
         $this->nombre= $nombre;
         $this->apellido= $apellido;
         $this->nroDocumento= $nroDocumento;
         $this->telefono= $telefono;
-
+        $this->numAsiento= $numAsiento;
+        $this->numTicket= $numTicket;
     }
     
     //PARA PODER VER
@@ -50,6 +53,14 @@ class Pasajero{
     public function getTelefono(){
         return $this->telefono;
     }
+    public function getNumAsiento(){
+        return $this->numAsiento;
+    }
+    public function getNumTicket(){
+        return $this->numTicket;
+    }
+
+
 
 
     //PARA PODER MODIFICAR
@@ -65,29 +76,21 @@ class Pasajero{
     public function setTelefono($tel){
         $this->telefono = $tel;
     }
-
- /** 
-  * public function mostrarPasajeros($pasajeros){
-        *tring $arregloPasajeros
-        *$arregloPasajeros = null;
-        *for ($i=0; $i < (count($this->pasajeros)) ; $i++) { 
-         *   $nombre= $this->pasajeros[$i]['nombre'];
-          *  $apellido= $this->pasajeros[$i]['apellido'];
-           * $dni= $this->pasajeros[$i]['dni'];
-            *$telefono= $this->pasajeros[$i]['telefono'];
-            *$arregloPasajeros = $arregloPasajeros . "PASAJERO N: " . $i ."\nNOMBRE: " . $nombre . "\nAPELLIDO: " . $apellido.
-            *"\nNUMERO DE DOCUMENTO: " . $dni . "\nTELEFONO: " . $telefono;
-        *}
-        *return $arregloPasajeros;
-    }*/
-    
+    public function setNumAsiento($numAsiento){
+        $this->numAsiento= $numAsiento;
+    }
+    public function setNumTicket($numTicket){
+        $this->numTicket= $numTicket;
+    }
 
 
     public function __toString(){
         $cadena = "\nNOMBRE: " . $this->getNombre()."|". 
                   " APELLIDO: " . $this->getApellido()."|".
                   " NUMERO DE DOCUMENTO: " . $this->getNroDocumento()."|".
-                  " TELEFONO: " . $this->getTelefono()."|" ;
+                  " TELEFONO: " . $this->getTelefono()."|" . 
+                  "\NUMERO DE ASIENTO: ". $this->getNumAsiento()."|" . 
+                  "\NUMERO DE TICKET: ". $this->getNumTicket()."|" ;
         return $cadena;
     }
 }
