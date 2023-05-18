@@ -28,16 +28,18 @@ class Pasajero{
     private $telefono;
     private $numAsiento;
     private $numTicket;
+    private $costo;
 
 
     //METODOS
-    public function __construct($nombre, $apellido, $nroDocumento, $telefono, $numAsiento, $numTicket){
+    public function __construct($nombre, $apellido, $nroDocumento, $telefono, $numAsiento, $numTicket, $costo){
         $this->nombre= $nombre;
         $this->apellido= $apellido;
         $this->nroDocumento= $nroDocumento;
         $this->telefono= $telefono;
         $this->numAsiento= $numAsiento;
         $this->numTicket= $numTicket;
+        $this->costo = $costo;
     }
     
     //PARA PODER VER
@@ -59,7 +61,9 @@ class Pasajero{
     public function getNumTicket(){
         return $this->numTicket;
     }
-
+    public function getCosto(){
+        return $this->costo;
+    }
 
 
 
@@ -82,6 +86,14 @@ class Pasajero{
     public function setNumTicket($numTicket){
         $this->numTicket= $numTicket;
     }
+    public function setCosto($costo){
+        $this->costo= $costo;
+    }
+
+
+    public function darPorcentajeIncremento(){
+        $incremento = 0.1;
+    }
 
 
     public function __toString(){
@@ -90,7 +102,8 @@ class Pasajero{
                   " NUMERO DE DOCUMENTO: " . $this->getNroDocumento()."|".
                   " TELEFONO: " . $this->getTelefono()."|" . 
                   "\NUMERO DE ASIENTO: ". $this->getNumAsiento()."|" . 
-                  "\NUMERO DE TICKET: ". $this->getNumTicket()."|" ;
+                  "\NUMERO DE TICKET: ". $this->getNumTicket()."|" . 
+                  "COSTO DEL PASAJE $: ". $this->getCosto(). "|";
         return $cadena;
     }
 }

@@ -33,10 +33,10 @@ include_once('Responsable.php');
   }
 
 
-  $objPasajero1 = new Pasajero("jazmin", "valenzuela", 43530680, 2994584611);
-  $objPasajero2 = new Pasajero("nicolas", "torres", 43575236, 2994448596);
-  $objPasajero3 = new Pasajero("nicolas", "bucarey", 41911258, 2994573646);
-  $objPasajero4 = new Pasajero("victoria", "gimenez", 42457832, 2992563144);
+  $objPasajero1 = new PasajeroVip(3591, 900, "jazmin", "valenzuela", 43530680, 2994584611, 101, 159753, 15000);
+  $objPasajero2 = new PasajeroVip(4257,250, "nicolas", "torres", 43575236, 2994448596, 102, 159723, 14000);
+  $objPasajero3 = new PasajeroConNecesidades(false, true, true, "nicolas", "bucarey", 41911258, 2994573646, 131, 159798, 10000);
+  $objPasajero4 = new PasajeroConNecesidades(true, false, true, "victoria", "gimenez", 42457832, 2992563144, 141, 159003, 17000);
   
   $arregloPasajeros=[];
   $arregloPasajeros[0]= $objPasajero1;
