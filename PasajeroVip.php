@@ -1,4 +1,5 @@
 <?php
+include_once('Pasajero.php');
 
 class PasajeroVIP extends Pasajero{
 
@@ -31,10 +32,23 @@ class PasajeroVIP extends Pasajero{
     }
 
 
+    public function darPorcentajeIncremento(){
+        if($this->getCantMillasPasajero>300){
+            $incremento = $this->getCosto() + ($this->getCosto()*0.30);
+            $this->setCosto($incremento);
+        }
+        else{
+            $incremento = $this->getCosto() + ($this->getCosto()*0.35);
+            $this->setCosto($incremento);
+        }
+        return $this->getCosto();
+    }
+
+
     public function __toString(){
         $cadena = parent::__toString();
-        $cadena.= "\nNUMERO DE VIAJERO FRECUENTE: " .$this->getNumViajeroFrecuente().
-                  "\nCANTIDAD DE MILLAS DE PASAJERO: " .$this->getCantMillasPasajero();
+        $cadena.= "\nNUMERO DE VIAJERO FRECUENTE: " .$this->getNumViajeroFrecuente(). "|".
+                  "CANTIDAD DE MILLAS DE PASAJERO: " .$this->getCantMillasPasajero()."|";
         return $cadena;
     }
 

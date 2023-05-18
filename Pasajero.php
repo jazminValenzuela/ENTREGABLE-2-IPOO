@@ -92,7 +92,9 @@ class Pasajero{
 
 
     public function darPorcentajeIncremento(){
-        $incremento = 0.1;
+        $incremento = $this->getCosto() + ($this->getCosto()*0.1);
+        $this->setCosto($incremento);
+        return $this->getCosto();
     }
 
 
@@ -101,8 +103,8 @@ class Pasajero{
                   " APELLIDO: " . $this->getApellido()."|".
                   " NUMERO DE DOCUMENTO: " . $this->getNroDocumento()."|".
                   " TELEFONO: " . $this->getTelefono()."|" . 
-                  "\NUMERO DE ASIENTO: ". $this->getNumAsiento()."|" . 
-                  "\NUMERO DE TICKET: ". $this->getNumTicket()."|" . 
+                  " NUMERO DE ASIENTO: ". $this->getNumAsiento()."|" . 
+                  " NUMERO DE TICKET: ". $this->getNumTicket()."|" . 
                   "COSTO DEL PASAJE $: ". $this->getCosto(). "|";
         return $cadena;
     }

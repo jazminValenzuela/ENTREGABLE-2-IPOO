@@ -1,6 +1,7 @@
 <?php
 include_once('Viaje.php');
-include_once('Pasajero.php');
+include_once('PasajeroConNecesidades.php');
+include_once('PasajeroVip.php');
 include_once('Responsable.php');
 /**
 *Modificar la clase Viaje para que ahora los pasajeros sean un objeto que tenga los atributos nombre, apellido, 
